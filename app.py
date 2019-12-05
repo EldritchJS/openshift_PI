@@ -22,8 +22,6 @@ def baseendpoint():
 @app.route("/data")
 def dataendpoint():
     logging.debug('serving data...')
-    categories, data = top(request)
-    data.insert(0, "counts")
     return jsonify({"categories": ['foo'], "data": [['bar']]})
 
 
