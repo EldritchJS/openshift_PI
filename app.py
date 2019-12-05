@@ -13,14 +13,14 @@ print('piserver={}, piusername={}, pipassword={}'.format(piserver, piusername, p
 app = Flask(__name__)
 
 @app.route("/")
-def ahahah():
+def baseendpoint():
     logging.debug('serving...')
     return render_template('index.html',
                            categories=['foo'],
                            data=[['bar']])
 
 @app.route("/data")
-def dataonly():
+def dataendpoint():
     logging.debug('serving data...')
     categories, data = top(request)
     data.insert(0, "counts")
