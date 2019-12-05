@@ -1,19 +1,12 @@
-import argparse
 import logging
 import os
 import requests
 
 from flask import Flask, request, jsonify, render_template
 
-parser = argparse.ArgumentParser(description='PI Server Interface')
-parser.add_argument('--piserver', help='PI server address', default='piserver')
-parser.add_argument('--username', help='PI server username', default='piuser')
-parser.add_argument('--password', help='PI server password', default='piuserpassword')
-args = parser.parse_args()
-
-piserver   = os.getenv('', args.piserver)
-piusername = os.getenv('', args.username)
-pipassword = os.getenv('', args.password)
+piserver   = os.getenv('PISERVER')
+piusername = os.getenv('PIUSERNAME')
+pipassword = os.getenv('PIPASSWORD')
 
 print('piserver={}, piusername={}, pipassword={}'.format(piserver, piusername, pipassword))
 
